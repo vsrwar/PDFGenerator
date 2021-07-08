@@ -9,11 +9,13 @@ namespace PDFGenerator.Domain.ValueObjects
         [Required]
         public string Value { get; private set; }
         [Required]
-        public int CoordenateX { get; private set; }
+        [Range(0, 2100)]
+        public int? CoordenateX { get; private set; }
         [Required]
-        public int CoordenateY { get; private set; }
+        [Range(0, 2970)]
+        public int? CoordenateY { get; private set; }
 
-        public Field(string name, string value, int coordenateX, int coordenateY)
+        public Field(string name, string value, int? coordenateX, int? coordenateY)
         {
             Name = name;
             Value = value;
